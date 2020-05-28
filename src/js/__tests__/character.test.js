@@ -1,20 +1,20 @@
 import {
   describe, expect,
 } from '@jest/globals';
-import Character from '../characters/character';
+import ErrorRepository from '../characters/errorRepository';
 
 describe('Генератор кодов', () => {
   test('Пришел правильный код', () => {
-    const received = new Character();
+    const received = new ErrorRepository();
 
     expect(received.translate(203))
       .toEqual('Non-Authoritative Information');
   });
 
   test('Проверка если кода такого нет', () => {
-    const received = new Character();
+    const received = new ErrorRepository();
 
-    expect(() => { received.translate(23); })
-      .toThrowError(new Error('Такого кода нет'));
+    expect(received.translate(23))
+      .toBe('Такого кода нет');
   });
 });

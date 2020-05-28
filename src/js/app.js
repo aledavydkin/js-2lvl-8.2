@@ -1,6 +1,6 @@
-import Character from './characters/character';
+import ErrorRepository from './characters/errorRepository';
 
-const test = new Character();
+const test = new ErrorRepository();
 
 test.translate(203);
 

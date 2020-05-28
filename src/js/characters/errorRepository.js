@@ -1,4 +1,4 @@
-class Character {
+class ErrorRepository {
   constructor() {
     this.errors = new Map([
       [203, 'Non-Authoritative Information'],
@@ -15,8 +15,8 @@ class Character {
     if (this.errors.has(code)) {
       return this.errors.get(code);
     }
-    throw new Error('Такого кода нет');
+    return 'Такого кода нет';
   }
 }
 
-export default Character;
+export default ErrorRepository;
